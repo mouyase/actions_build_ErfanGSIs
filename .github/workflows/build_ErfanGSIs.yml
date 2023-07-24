@@ -1,20 +1,11 @@
 name: build_ErfanGSIs
 
 on:
-#  release:
-#    types: [published]
-#  push:
-#    branches:
-#      - master
-#    paths:
-#      - '.config'
-#  schedule:
-#    - cron: 0 8 * * 5
-  watch:
-    types: [started]
+  repository_dispatch:
+  workflow_dispatch:
     
 env:
-  ROM_URL: https://npqbkhkbjbrd3k7r9hs4qb31809qj0stc2pue3qut9iq9l7dp1bfv35b.qc.dolfincdnx.net:27651/xdispatch76723c3977005328/bigota.d.miui.com/V14.0.7.0.TLYCNXM/miui_YUNLUO_V14.0.7.0.TLYCNXM_f4252959ff_13.0.zip?bsreqid=f673220b807865773819bc3f291fdca4&bsxdisp=se
+  ROM_URL: https://bigota.d.miui.com/V14.0.7.0.TLYCNXM/miui_YUNLUO_V14.0.7.0.TLYCNXM_f4252959ff_13.0.zip
   ROM_NAME: MIUI
   BUILD_TYPE: ab
   TZ: Asia/Shanghai
