@@ -48,12 +48,9 @@ jobs:
               cd $GITHUB_WORKSPACE/ErfanGSIs/output
               mkdir final
               zip -r final/GSI.zip ./*
-       
-       - name: Upload GSI to WeTransfer
-         run: |
-              cd $GITHUB_WORKSPACE/ErfanGSIs/output
-              curl -sL https://git.io/file-transfer | sh
-              ./transfer wet ./final/GSI.zip
-
-         
-            
+      
+       - name: Upload
+         uses: actions/upload-artifact@v2
+         with:
+           name: GSI.zip
+           path: ${{ github.workspace }}/ErfanGSIs/output/final/GSI.zip                  
