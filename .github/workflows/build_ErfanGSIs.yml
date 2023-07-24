@@ -21,7 +21,7 @@ env:
 
 jobs:
   build:
-    runs-on: ubuntu-18.04
+    runs-on: ubuntu-latest
     if: github.event.repository.owner.id == github.event.sender.id
 
     steps:
@@ -42,9 +42,9 @@ jobs:
        
        - name: Setting up ErfanGSI requirements
          run: |
+              sudo bash ./setup.sh
               cd $GITHUB_WORKSPACE/ErfanGSIs
               mkdir ./output
-              sudo bash ./setup.sh
        
        - name: Download Stock Rom & Generate GSI
          run: |
